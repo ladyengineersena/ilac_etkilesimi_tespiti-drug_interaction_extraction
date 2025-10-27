@@ -1,32 +1,32 @@
-# Ä°laÃ§ EtkileÅŸimi Tespiti (Drug Interaction Extraction)
+# Drug Interaction Extraction
 
-Bu proje, doÄŸal dil iÅŸleme (NLP) teknikleri kullanarak metinlerden ilaÃ§ etkileÅŸimlerini tespit etmeyi ve Ã§Ä±karmayÄ± amaÃ§lamaktadÄ±r.
+This project aims to detect and extract drug interactions from texts using Natural Language Processing (NLP) techniques.
 
-## Ã–zellikler
+## Features
 
-- TÃ¼rkÃ§e metin desteÄŸi
-- UTF-8 karakter encoding desteÄŸi
-- Named Entity Recognition (NER) ile ilaÃ§ isimlerini bulma
-- Ä°liÅŸki Ã§Ä±karÄ±mÄ± (relationship extraction) ile ilaÃ§ etkileÅŸimlerini tespit etme
-- Risk seviyesi belirleme
-- Makine Ã¶ÄŸrenmesi tabanlÄ± sÄ±nÄ±flandÄ±rma
+- Turkish text support
+- UTF-8 character encoding support
+- Named Entity Recognition (NER) to identify drug names
+- Relationship extraction to detect drug interactions
+- Risk level assessment
+- Machine learning-based classification
 
-## Kurulum
+## Installation
 
-### Gereksinimler
+### Requirements
 
 - Python 3.8+
 - pip
 
-### AdÄ±mlar
+### Steps
 
-1. Repository'yi klonlayÄ±n:
+1. Clone the repository:
 ```bash
 git clone https://github.com/ladyengineersena/ilac_etkilesimi_tespiti-drug_interaction_extraction.git
 cd ilac_etkilesimi_tespiti-drug_interaction_extraction
 ```
 
-2. Sanal ortam oluÅŸturun (Ã¶nerilir):
+2. Create a virtual environment (recommended):
 ```bash
 python -m venv venv
 # Windows:
@@ -35,49 +35,49 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-3. Gerekli paketleri yÃ¼kleyin:
+3. Install required packages:
 ```bash
 pip install -r requirements.txt
 ```
 
-## KullanÄ±m
+## Usage
 
-### Temel KullanÄ±m
+### Basic Usage
 
 ```python
 from ilac_etkilesimi import IlacEtkilesimTespiti
 
-# Modeli baÅŸlat
+# Initialize the model
 tespit = IlacEtkilesimTespiti()
 
-# Metindeki ilaÃ§ etkileÅŸimlerini bul
-metin = "Aspirin ve warfarin birlikte kullanÄ±ldÄ±ÄŸÄ±nda kanama riski artar."
+# Find drug interactions in text
+metin = "Aspirin ve warfarin birlikte kullanildiginda kanama riski artar."
 etkilesimler = tespit.analiz_et(metin)
 
 print(etkilesimler)
 ```
 
-### Toplu Ä°ÅŸleme
+### Batch Processing
 
 ```python
-# Birden fazla metin iÃ§in iÅŸlem
+# Process multiple texts
 metinler = [
-    "Aspirin ile ibuprofen birlikte alÄ±nmamalÄ±dÄ±r.",
-    "Paracetamol genellikle gÃ¼venlidir."
+    "Aspirin ile ibuprofen birlikte alinmamalidir.",
+    "Paracetamol genellikle guvenlidir."
 ]
 
 sonuclar = tespit.toplu_analiz(metinler)
 ```
 
-## Proje YapÄ±sÄ±
+## Project Structure
 
 ```
 ilac-etkilesimi-tespiti/
 â”œâ”€â”€ ilac_etkilesimi/
 â”‚   â”œâ”€â”€ __init__.py
-â”‚   â”œâ”€â”€ nlp_model.py         # NLP model ve iÅŸleme
-â”‚   â”œâ”€â”€ iliski_ciikarim.py    # Ä°liÅŸki Ã§Ä±karÄ±mÄ± algoritmasÄ±
-â”‚   â””â”€â”€ veri_islem.py         # Veri iÅŸleme yardÄ±mcÄ±larÄ±
+â”‚   â”œâ”€â”€ nlp_model.py         # NLP model and processing
+â”‚   â”œâ”€â”€ iliski_ciikarim.py    # Relationship extraction algorithm
+â”‚   â””â”€â”€ veri_islem.py         # Data processing helpers
 â”œâ”€â”€ data/
 â”‚   â””â”€â”€ ornek_metinler.txt
 â”œâ”€â”€ examples/
@@ -90,23 +90,23 @@ ilac-etkilesimi-tespiti/
 â””â”€â”€ README.md
 ```
 
-## KatkÄ±da Bulunma
+## Contributing
 
-1. Bu repository'yi fork edin
-2. Bir feature branch oluÅŸturun (git checkout -b feature/YeniOzellik)
-3. DeÄŸiÅŸikliklerinizi commit edin (git commit -m "Yeni Ã¶zellik eklendi")
-4. Branch'inizi push edin (git push origin feature/YeniOzellik)
-5. Bir Pull Request oluÅŸturun
+1. Fork this repository
+2. Create a feature branch (git checkout -b feature/NewFeature)
+3. Commit your changes (git commit -m "Added new feature")
+4. Push to your branch (git push origin feature/NewFeature)
+5. Create a Pull Request
 
-## Lisans
+## License
 
-Bu proje MIT lisansÄ± altÄ±nda lisanslanmÄ±ÅŸtÄ±r.
+This project is licensed under the MIT License.
 
-## Ä°letiÅŸim
+## Contact
 
-SorularÄ±nÄ±z iÃ§in issue aÃ§abilirsiniz.
+You can open an issue for questions.
 
-## TeÅŸekkÃ¼rler
+## Acknowledgments
 
 - NLTK
 - spaCy
